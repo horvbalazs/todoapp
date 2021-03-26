@@ -4,7 +4,11 @@ import userService from "../users/user.service";
 export default jwt;
 
 function jwt() {
-  return expressJwt({ secret: process.env.SECRET, algorithms: ["HS256"], isRevoked }).unless({
+  return expressJwt({
+    secret: process.env.SECRET,
+    algorithms: ["HS256"],
+    isRevoked,
+  }).unless({
     path: ["/users/authenticate", "/users/register"],
   });
 }

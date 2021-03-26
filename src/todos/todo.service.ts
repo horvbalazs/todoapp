@@ -12,7 +12,7 @@ export default {
 };
 
 async function create({ date, text }: TodoData, owner: string) {
-  const todo = new Todo({ date, text, owner });
+  const todo = new Todo({ date, text, owner, required: false });
   await todo.save();
 
   return todo.toJSON();

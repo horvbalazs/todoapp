@@ -11,6 +11,7 @@ const schema = new Schema({
   owner: { type: String, required: true },
   text: { type: String, required: true },
   date: { type: Number, required: true },
+  done: { type: Boolean, required: true },
 });
 
 schema.set("toJSON", {

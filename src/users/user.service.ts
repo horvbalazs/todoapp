@@ -13,7 +13,9 @@ export default {
 async function authenticate({ email, password }: AuthData) {
   const user = await User.findOne({ email });
   if (user && bcrypt.compareSync(password, user.hash)) {
-    const token = jwt.sign({ sub: user.id }, process.env.SECRET, { expiresIn: "7d" });
+    const token = jwt.sign({ sub: user.id }, process.env.SECRET, {
+      expiresIn: "7d",
+    });
     return {
       ...user.toJSON(),
       token,
