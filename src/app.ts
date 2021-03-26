@@ -6,7 +6,7 @@ import users from "./users/users.controller";
 import todos from "./todos/todos.controller";
 
 const app = express();
-const port = 3000;
+const port = process.env.NODE_ENV === "prod" ? process.env.PORT || 80 : 4000;
 
 app.use(jwt());
 
