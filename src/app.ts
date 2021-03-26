@@ -6,7 +6,7 @@ import users from "./users/users.controller";
 import todos from "./todos/todos.controller";
 
 const app = express();
-const port = process.env.NODE_ENV === "prod" ? process.env.PORT || 80 : 4000;
+const port = process.env.PORT ? process.env.PORT : 4000;
 
 app.use(jwt());
 
@@ -18,6 +18,5 @@ app.use("/todos", todos);
 app.use(errorHandler);
 
 app.listen(port, () => {
-  console.log(process.env.PORT);
   console.log(`server is listening on ${port}`);
 });

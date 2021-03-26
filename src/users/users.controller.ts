@@ -8,7 +8,6 @@ router.post("/register", register);
 export default router;
 
 function authenticate(req, res, next) {
-  console.log(req.body);
   userService
     .authenticate(req.body)
     .then((user) =>
