@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import { connectionString } from "../../config.json";
 import User from "../users/user.model";
 import Todo from "../todos/todo.model";
 const connectionOptions = {
@@ -9,7 +8,7 @@ const connectionOptions = {
   useFindAndModify: false,
 };
 
-mongoose.connect(connectionString, connectionOptions);
+mongoose.connect(process.env.CONNECTION_STRING, connectionOptions);
 mongoose.Promise = global.Promise;
 
 export default {
