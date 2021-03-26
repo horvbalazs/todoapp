@@ -18,5 +18,6 @@ app.use("/todos", todos);
 app.use(errorHandler);
 
 app.listen(port, () => {
+  console.log(process.env.PORT);
   console.log(`server is listening on ${port}`);
 });
