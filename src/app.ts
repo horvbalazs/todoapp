@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors";
 import bp from "body-parser";
 import jwt from "./_helpers/jwt";
 import errorHandler from "./_helpers/error-handler";
@@ -9,6 +10,7 @@ const app = express();
 const port = process.env.PORT ? process.env.PORT : 4000;
 
 app.use(jwt());
+app.use(cors());
 
 app.use(bp.json());
 

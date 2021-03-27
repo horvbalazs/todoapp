@@ -3,7 +3,7 @@ import todoService from "./todo.service";
 
 const router = express.Router();
 router.post("/", create);
-router.get("/", create);
+router.get("/", getAll);
 router.put("/:id", edit);
 router.delete("/:id", _delete);
 
