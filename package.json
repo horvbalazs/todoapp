@@ -22,6 +22,7 @@
   "homepage": "https://github.com/horvbalazs/todoapp#readme",
   "devDependencies": {
     "@types/bcrypt": "^3.0.0",
+    "@types/cors": "^2.8.10",
     "@types/express": "^4.16.1",
     "@types/express-jwt": "^6.0.1",
     "@types/jsonwebtoken": "^8.5.1",
